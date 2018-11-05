@@ -1,0 +1,47 @@
+
+// body
+body {
+
+    
+    &.scroll-hidden {
+        overflow:hidden;
+    }
+
+    background-repeat:no-repeat;
+    background-position:center 0;
+    background-color:#000;
+
+    // pc
+    @include mediaQuery($deviceLarge){
+        background-image: url('../image/img-main.png');
+        background-size:auto 1114px;
+    }
+
+    // mobile
+    @include mediaQuery($deviceSmall) {
+        background-image:url('../image/375m_bg_main@3x.png');
+        background-size:auto 560px;
+    }
+}
+
+// layout
+header,
+article,
+footer {
+    // 레이아웃과 배경사진을 분리하기 위함
+    div.container {
+        position:relative;
+        width:100%;
+        max-width:960px;
+        margin:0 auto;
+        box-sizing:border-box;
+    }
+}
+
+/* bodymovin */
+.bodymovin {
+    display:none;
+    position:fixed; top:0; left:0; right:0; bottom:0;
+    background-color:rgba(0,0,0,0.95);
+    z-index:20;
+}

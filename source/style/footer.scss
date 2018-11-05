@@ -1,0 +1,35 @@
+@charset 'UTF-8';
+
+footer {
+    padding:90px 0 85px;
+    background-color:#000;
+
+    h2 {
+        @include fontNone;
+        width:108px;
+        height:18px;
+        background:url("../image/polaris-logo-footer.png") no-repeat 0 0;
+        background-size:contain;
+    }
+
+    .copyright {
+        font-weight:100;
+        color:#bbb;
+        font-size:rem(16);
+        margin-top:18px;
+    }
+
+    // mobile
+    @include mediaQuery($deviceSmall) {
+        padding:40px 20px;
+
+        h2 {
+            width:60px;
+            height:10px;
+        }
+        .copyright {
+            font-size:rem(10);
+        }
+    }
+
+}

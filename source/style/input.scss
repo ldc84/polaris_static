@@ -1,0 +1,109 @@
+input[type='email'],
+input[type='text'] {
+    background:transparent;
+    border-style:solid;
+    border-width:0;
+    box-sizing:border-box;
+    border-color:transparent;
+    width:100%;
+    height:40px;
+    line-height:38px;
+    color:#fff;
+    font-size:rem(16);
+    border-bottom:1px solid #fff;
+    border-radius:0;
+    outline:none;
+    transition:all .2s ease-in-out;
+    
+    // mobile
+    @include mediaQuery($deviceSmall) {
+        height:30px;
+        line-height:28px;
+        font-size:rem(12);
+    }
+}
+
+
+// input-control
+.input-control {
+    position:relative;
+    padding:20px 0 0 0;
+    label {
+        position:absolute; bottom:20px; left:0;
+        color:#fff;
+        font-size:rem(16);
+        transition:all .2s ease-in-out;
+    }
+    .error-message {
+        position:absolute; bottom:18px; right:0;
+        color:$color-point;
+        font-size:rem(16);
+        font-weight:600;
+        opacity:0;
+        z-index:-1;
+        transition:all .2s ease-in-out;
+    }
+
+    // focus 시 컬러
+    input:focus {
+        color:$color-point-2;
+        border-color:$color-point-2;
+    }
+
+    input:focus + label {
+        color:$color-point-2;
+    }
+
+    // focus 됐을때 + focus 나갔을때 input 값 있으면 label 위치 이동
+    input:focus + label,
+    input:valid + label {
+    // input[type='text']:valid + label,
+    // input[type='email']:invalid + label {
+        bottom:30px;
+        font-size:rem(12);
+    }
+
+    // error
+    &.error {
+        label {
+            color:$color-point;
+        }
+        input {
+            color:$color-point;
+            border-color:$color-point;
+        }
+        .error-message {
+            opacity:1;
+            z-index:1;
+        }
+        // focus 시 컬러
+        input:focus {
+            color:$color-point-2;
+            border-color:$color-point-2;
+        }
+    }
+
+    // 간격
+    & + .input-control {
+        margin-top:10px;
+    }
+
+    // mobile
+    @include mediaQuery($deviceSmall) {
+        label {
+            bottom:10px;
+            font-size:rem(12);
+        }
+        .error-message {
+            bottom:10px;
+            font-size:rem(12);
+        }
+    
+        // focus 됐을때 + focus 나갔을때 input 값 있으면 label 위치 이동
+        input:focus + label,
+        input[type='text']:valid + label,
+        input[type='email']:invalid + label, {
+            font-size:rem(10);
+        }
+    }
+}
