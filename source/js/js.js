@@ -332,7 +332,8 @@
         var inputName = form.find('input#name');
         var inputEmail = form.find('input#email');
         var inputMessage = form.find('input#message');
-        var url = 'https://script.google.com/macros/s/AKfycbyRRj3mjlemg2x1MqbvNpV_MuZIoHTxYQFazq2_z4grirMRUqU/exec';
+        // var url = 'https://script.google.com/macros/s/AKfycbyRRj3mjlemg2x1MqbvNpV_MuZIoHTxYQFazq2_z4grirMRUqU/exec';
+        var url = '';
 
         // submit 성공
         form.on('submit', function(e){
